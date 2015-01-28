@@ -1,12 +1,4 @@
 #!/usr/bin/env python
-"""
-__init__.py - Phenny Init Module
-Copyright 2008, Sean B. Palmer, inamidst.com
-Licensed under the Eiffel Forum License 2.
-
-http://inamidst.com/phenny/
-"""
-
 import sys, os, time, threading, signal
 import bot
 
