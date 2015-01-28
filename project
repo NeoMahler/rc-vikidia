@@ -1,8 +1,4 @@
 #!/bin/bash
-# project
-# Copyright 2008, Sean B. Palmer, inamidst.com
-# Licensed under the Eiffel Forum License 2.
-
 # archive - Create phenny.tar.bz2 using git archive
 function archive() {
    git archive --format=tar --prefix=phenny/ HEAD | bzip2 > phenny.tar.bz2
