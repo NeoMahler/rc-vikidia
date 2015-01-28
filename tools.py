@@ -1,11 +1,4 @@
 #!/usr/bin/env python
-"""
-tools.py - Phenny Tools
-Copyright 2008, Sean B. Palmer, inamidst.com
-Licensed under the Eiffel Forum License 2.
-
-http://inamidst.com/phenny/
-"""
 
 def deprecated(old): 
    def new(phenny, input, old=old): 
