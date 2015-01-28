@@ -1,12 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: cp1252 -*-
-"""
-startup.py - Phenny Startup Module
-Copyright 2008, Sean B. Palmer, inamidst.com
-Licensed under the Eiffel Forum License 2.
-
-http://inamidst.com/phenny/
-"""
 
 import threading, time
 
@@ -20,7 +13,7 @@ def setup(phenny):
       except: pass
 
       def close():
-         print u"Ningú ha fet PONG al nostre PING. Reiniciant."
+         print u"Restarting..."
          phenny.handle_close()
       
       def pingloop():
