@@ -1,10 +1,10 @@
 nick = 'rc-vikidia'
 host = 'irc.freenode.net'
-channels = ['#vikidia-recentchanges']
-owner = 'NeoMahler'
+channels = ['#example', '#test'] #Channels to connect here
+owner = '' #Owner nick here
 
 # password is the NickServ password, serverpass is the server password
-password = 'Unapersona'
+password = '' #Your nickerv password here
 # serverpass = 'serverpass'
 
 # These are people who will be able to use admin.py's functions...
