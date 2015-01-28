@@ -1,11 +1,4 @@
 #!/usr/bin/env python
-"""
-irc.py - A Utility IRC Bot
-Copyright 2008, Sean B. Palmer, inamidst.com
-Licensed under the Eiffel Forum License 2.
-
-http://inamidst.com/phenny/
-"""
 
 import sys, re, time, traceback
 import socket, asyncore, asynchat
