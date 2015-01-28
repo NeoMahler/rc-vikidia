@@ -1,23 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: cp1252 -*-
-"""
-reload.py - Phenny Module Reloader Module
-Copyright 2008, Sean B. Palmer, inamidst.com
-Licensed under the Eiffel Forum License 2.
-
-http://inamidst.com/phenny/
-"""
 
 import sys, os.path, time, imp
 import irc
 
 def f_reload(phenny, input): 
-   u"""Recarrega un mòdul. Només els administradors.""" 
+   u"""Reloads the module.""" 
    if not input.admin: return
 
    name = input.group(2)
    if name == phenny.config.owner: 
-      return phenny.reply(u'Capsigrony! Que no veus que no m\'has dit cap mòdul?')
+      return phenny.reply(u'You have to tell me what module!')
 
    if (not name) or (name == '*'): 
       phenny.variables = None
@@ -26,14 +19,14 @@ def f_reload(phenny, input):
       return phenny.reply('done')
 
    if not sys.modules.has_key(name): 
-      return phenny.reply(u'%s: no trobo el mòdul!' % name)
+      return phenny.reply(u'%s: no such module!' % name)
 
    # Thanks to moot for prodding me on this
    path = sys.modules[name].__file__
    if path.endswith('.pyc') or path.endswith('.pyo'): 
       path = path[:-1]
    if not os.path.isfile(path): 
-      return phenny.reply(u'He trobat %s, però no el fitxer font' % name)
+      return phenny.reply(u'I\'ve found %s, but no the source code' % name)
 
    module = imp.load_source(name, path)
    sys.modules[name] = module
@@ -46,7 +39,7 @@ def f_reload(phenny, input):
    phenny.register(vars(module))
    phenny.bind_commands()
 
-   phenny.reply('%r (versió: %s)' % (module, modified))
+   phenny.reply('%r (version: %s)' % (module, modified))
 f_reload.name = 'reload'
 f_reload.rule = ('$nick', ['reload'], r'(\S+)?')
 f_reload.priority = 'low'
