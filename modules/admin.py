@@ -2,7 +2,7 @@
 # -*- coding: cp1252 -*-
 
 def join(phenny, input): 
-   u"""Entra al cana especificat. Només els administradors."""
+   u"""Join the specified channel."""
    # Can only be done in privmsg by an admin
    if input.sender.startswith('#'): return
    if input.admin: 
@@ -10,22 +10,22 @@ def join(phenny, input):
       if not key: 
          phenny.write(['JOIN'], channel)
       else: phenny.write(['JOIN', channel, key])
-join.commands = ['join','entra']
+join.commands = ['join']
 join.priority = 'low'
-join.example = '.entra #exemple or .entra #exemple contrassenya'
+join.example = '.join #example or .join #example key'
 
 def part(phenny, input): 
-   u"""Daixa el canal especificat. Només els administradors."""
+   u"""Part the specified channel."""
    # Can only be done in privmsg by an admin
    if input.sender.startswith('#'): return
    if input.admin: 
       phenny.write(['PART'], input.group(2))
-part.commands = ['part','surt']
+part.commands = ['part']
 part.priority = 'low'
-part.example = '.deixa #exemple'
+part.example = '.part #example'
 
 def quit(phenny, input): 
-   """Surt del servidor. Només l'owner."""
+   """Quit from the server."""
    # Can only be done in privmsg by the owner
    if input.sender.startswith('#'): return
    if input.owner: 
