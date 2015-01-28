@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 """
-icao.py - Phenny ICAO Codes Data
 This data and module are in the public domain.
 
 http://inamidst.com/phenny/
