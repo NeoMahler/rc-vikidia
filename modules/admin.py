@@ -1,15 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: cp1252 -*-
-"""
-admin.py - Phenny Admin Module
-Copyright 2008-9, Sean B. Palmer, inamidst.com
-Licensed under the Eiffel Forum License 2.
-
-http://inamidst.com/phenny/
-"""
 
 def join(phenny, input): 
-   u"""Entra al cana especificat. Només els administradors."""
+   u"""Entra al cana especificat. NomÃ©s els administradors."""
    # Can only be done in privmsg by an admin
    if input.sender.startswith('#'): return
    if input.admin: 
@@ -22,7 +15,7 @@ join.priority = 'low'
 join.example = '.entra #exemple or .entra #exemple contrassenya'
 
 def part(phenny, input): 
-   u"""Daixa el canal especificat. Només els administradors."""
+   u"""Daixa el canal especificat. NomÃ©s els administradors."""
    # Can only be done in privmsg by an admin
    if input.sender.startswith('#'): return
    if input.admin: 
@@ -32,7 +25,7 @@ part.priority = 'low'
 part.example = '.deixa #exemple'
 
 def quit(phenny, input): 
-   """Surt del servidor. Només l'owner."""
+   """Surt del servidor. NomÃ©s l'owner."""
    # Can only be done in privmsg by the owner
    if input.sender.startswith('#'): return
    if input.owner: 
