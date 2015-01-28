@@ -1,9 +1,4 @@
 #!/usr/bin/env python
-"""
-web.py - Web Facilities
-Author: Sean B. Palmer, inamidst.com
-About: http://inamidst.com/phenny/
-"""
 
 import re, urllib
 from htmlentitydefs import name2codepoint
